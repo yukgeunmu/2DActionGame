@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public InputPlayer input { get; private set; }
     public InputPlayer.PlayerActionActions playerActions { get; private set; } //     input.PlayerAction 이거 생략 하기 위해
 
+    public AttackTrigger AttackRange;
+
 
     private void Awake()
     {

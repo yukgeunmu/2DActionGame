@@ -1,3 +1,4 @@
+using System.Drawing.Text;
 using System.Reflection.Emit;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -61,6 +62,7 @@ public class PlayerBaseState : IState
     }
 
 
+
     public virtual void Enter()
     {
         AddInputActionsCallbacks();
@@ -114,11 +116,6 @@ public class PlayerBaseState : IState
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, stateMachine.JumpForce);
     }
 
-    protected void Attack()
-    {
-
-    }
-
     private void Rotate()
     {
         float input = stateMachine.MovementInput;
@@ -126,17 +123,26 @@ public class PlayerBaseState : IState
         if (input < 0)
         {
             stateMachine.PlayerCondition.spriteRenderer.flipX = true;
+            stateMachine.PlayerCondition.Input.AttackRange.transform.localPosition = new Vector3(-1f,-0.7f);
         }
         else if (input > 0)
         {
             stateMachine.PlayerCondition.spriteRenderer.flipX = false;
+            stateMachine.PlayerCondition.Input.AttackRange.transform.localPosition = new Vector3(1f, -0.7f);
         }
     }
 
     protected bool isGround()
     {
-        return Physics2D.Raycast(stateMachine.PlayerCondition.groundCheck.transform.position, Vector2.down, 0.1f, GameManager.Instance.groundLayer);
+        LayerMask groundLayer = LayerMask.GetMask("Ground");
+
+        return Physics2D.Raycast(stateMachine.PlayerCondition.groundCheck.transform.position, Vector2.down, 0.1f, groundLayer);
     }
 
+    protected bool isMonster()
+    {
+        LayerMask monsterLayer = LayerMask.GetMask("Monster");
 
+        return Physics2D.Raycast(stateMachine.PlayerCondition.groundCheck.transform.position, Vector2.down, 0.1f, monsterLayer);
+    }
 }

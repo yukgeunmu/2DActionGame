@@ -1,15 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
-public class SocketManager : Singleton<SocketManager>
+public class SocketManager
 {
     private SocketIOUnity socket;
 
     private string serverUrl = "http://localhost:3000";
 
+    public string LoadDataJson { get; private set; }
 
-    protected override void Awake()
+    public void Init()
     {
         socket = new SocketIOUnity(serverUrl);
 
@@ -23,19 +25,17 @@ public class SocketManager : Singleton<SocketManager>
         socket.Connect();
     }
 
-
-
     public void LoadData()
     {
         socket.Emit("loadData");
 
-        socket.On("sendData", response =>
+         socket.On("sendData", response =>
         {
             string jsonData = response.GetValue<string>();
 
             Debug.Log("Data loading from server is complete: " + jsonData);
 
-            DataManager.Instance.SetGameData(jsonData);
+            LoadDataJson = jsonData;
         });
     }
 
@@ -55,8 +55,7 @@ public class SocketManager : Singleton<SocketManager>
         {
             string jsonData = response.GetValue<string>();
 
-            GameManager.Instance.player = JsonUtility.FromJson<Player>(jsonData);
-
+            Managers.Data.SetPlayerData(jsonData);
         });
     }
 

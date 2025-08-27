@@ -22,6 +22,21 @@ public class PlayerAirData
 
 }
 
+[Serializable]
+public class PlayerData
+{
+    [field: SerializeField] public int health = 10;
+    [field: SerializeField] public int mana = 10;
+    [field: SerializeField] public int attack = 1;
+    [field: SerializeField] public int defence = 1;
+    [field: SerializeField] public int agility = 1;
+    [field: SerializeField] public int speed = 1;
+    [field: SerializeField] public int level = 1;
+    [field: SerializeField] public int statPoints = 0;
+    [field: SerializeField] public int maxExp = 10;
+    [field: SerializeField] public int exp = 0;
+}
+
 
 [CreateAssetMenu(fileName = "Player", menuName = "Characters/Player")]
 
@@ -29,4 +44,6 @@ public class PlayerSO : ScriptableObject
 {
     [field: SerializeField] public PlayerGroundData GroundData { get; private set; }
     [field: SerializeField] public PlayerAirData AirData { get; private set; }
+
+    [field: SerializeField] public PlayerData PlayerData { get; set; }
 }

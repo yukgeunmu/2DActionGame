@@ -18,6 +18,8 @@ public class PlayerAnimationData
     [SerializeField] private string attackParameterName = "@Attack";
     [SerializeField] private string NormalAttackParameterName = "NormalAttack";
 
+    [SerializeField] private string hutParameterName = "Hurt";
+
     public int GroundParameterHash { get; private set; }
     public int IdleParameterHash { get; private set; }
 
@@ -29,6 +31,8 @@ public class PlayerAnimationData
 
     public int AttackParameterHash { get; private set; }
     public int NormalAttackParameterHash { get; private set; }
+
+    public int HurtParameterHash { get; private set; }
 
     public void Initialize()
     {
@@ -44,6 +48,8 @@ public class PlayerAnimationData
 
         AttackParameterHash = Animator.StringToHash(attackParameterName);
         NormalAttackParameterHash = Animator.StringToHash(NormalAttackParameterName);
+
+        HurtParameterHash = Animator.StringToHash(hutParameterName);
     }
 
 }

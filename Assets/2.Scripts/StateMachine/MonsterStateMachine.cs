@@ -1,16 +1,28 @@
 using UnityEngine;
 
-public class MonsterStateMachine : MonoBehaviour
+public class MonsterStateMachine : StateMachine
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public MonsterCondition MonsterCondition { get; }
+    public float MovementSpeed {  get; private set; }
+    public float MovementSpeedModifier{ get; set; }
+
+    public GameObject Target {  get; private set; }
+    public MonsterIdleState IdleState { get; }
+    public MonsterChasingState ChasingState { get; }
+    public MonsterAttackState AttackState { get; }
+
+
+    public MonsterStateMachine(MonsterCondition monsterCondition)
     {
-        
+        MonsterCondition = monsterCondition;
+        Target = GameObject.FindGameObjectWithTag("Player");
+
+        IdleState = new MonsterIdleState(this);
+        ChasingState = new MonsterChasingState(this);
+        AttackState = new MonsterAttackState(this);
+
+        MovementSpeed = MonsterCondition.Data.BaseSpeed + MonsterCondition.Data.MonsterData.speed;
+        MovementSpeedModifier = MonsterCondition.Data.MoveSpeedModifier;
     }
 }

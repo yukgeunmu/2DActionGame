@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class MonsterController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public AttackTrigger AttackRange;
 
-    // Update is called once per frame
-    void Update()
+
+    private void Awake()
     {
-        
+        AttackRange = GetComponentInChildren<AttackTrigger>(true);
     }
 }

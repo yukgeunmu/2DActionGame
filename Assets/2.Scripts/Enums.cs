@@ -24,4 +24,12 @@ public class Enums {
         lv10 = 5009,
     }
 
+    public enum MonsterNumber
+    {
+        Goblin = 2000,
+        Mushroom = 2001,
+        FlyingEye = 2002,
+        Skeleton = 2003,
+    }
+
 }

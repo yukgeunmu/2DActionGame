@@ -9,7 +9,7 @@ public class PlayerMoveState : PlayerGroundedState
 
     public override void Enter()
     {
-        stateMachine.MovementSpeedModifier = groundData.MoveSpeedModifier;
+
         base.Enter();
         StartAnimation(stateMachine.PlayerCondition.AnimationData.MoveParameterHash);
     }

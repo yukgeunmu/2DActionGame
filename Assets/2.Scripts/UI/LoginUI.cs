@@ -1,9 +1,10 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 
-public class LoginUI : BaseUI
+public class LoginUI : BaseUI, IPoolable
 {
 
     public GameObject NickNamePanel;
@@ -30,15 +31,15 @@ public class LoginUI : BaseUI
     public int levelInfoId;
 
 
-
-    protected override UIState GetUIState()
+    private void Awake()
     {
-        return UIState.Login;
+        Init(Managers.UI);  
     }
 
     public override void Init(UIManager uIManager)
     {
         base.Init(uIManager);
+        uIManager.loginUI = this;
         firstCharacterBtn.onClick.AddListener(OnClickSelectFirst);
         secondCharacterBtn.onClick.AddListener(OnClickSelectSecond);
         thirdCharacterBtn.onClick.AddListener(OnClickSelectThird);
@@ -80,11 +81,13 @@ public class LoginUI : BaseUI
     {
         nickName = nickNameInput.text;
         levelInfoId = (int)Enums.SelectLevel.lv1;
+        Managers.Game.player = new Player(0,characterInfoId, levelInfoId, nickName, 0);
+        Managers.Game.GameStart();
         Debug.Log("캐릭터 생성");
 
-        SocketManager.Instance.SendCreatePlayer(characterInfoId, levelInfoId, nickName);
+        Managers.Socket.SendCreatePlayer(characterInfoId, levelInfoId, nickName);
 
-        uIManager.OnClickGame();
+        Release();
     }
 
     public void OnClickBackBtn()
@@ -119,6 +122,8 @@ public class LoginUI : BaseUI
         }
     }
 
-
-
+    public void Release()
+    {
+        Managers.Pool.PoolRegistry.Release(this);
+    }
 }

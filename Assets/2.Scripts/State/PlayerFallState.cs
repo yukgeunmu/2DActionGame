@@ -21,7 +21,7 @@ public class PlayerFallState : PlayerAirState
 
     public override void Update()
     {
-        if(isGround()) stateMachine.ChangeState(stateMachine.IdleState);
+        if(isGround() || isMonster()) stateMachine.ChangeState(stateMachine.IdleState);
         base.Update();
     }
 

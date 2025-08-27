@@ -10,7 +10,6 @@ public class PlayerComboAttackState : PlayerAttackState
     public override void Enter()
     {
         base.Enter();
-
         StartAnimation(stateMachine.PlayerCondition.AnimationData.NormalAttackParameterHash);
     }
 
@@ -29,7 +28,7 @@ public class PlayerComboAttackState : PlayerAttackState
         if (stateInfo.normalizedTime >= 1f && stateInfo.IsName("PlayerAttack"))
         {
             // isGround()는 PlayerBaseState에 있는 메서드입니다.
-            if (isGround())
+            if (isGround() ||  isMonster())
             {
                 stateMachine.ChangeState(stateMachine.IdleState);
             }

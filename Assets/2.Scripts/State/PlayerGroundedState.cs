@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -27,7 +28,13 @@ public class PlayerGroundedState : PlayerBaseState
 
         if (!isGround())
         {
-            stateMachine.ChangeState(stateMachine.FallState);
+            if (isMonster())
+            {
+                stateMachine.ChangeState(stateMachine.IdleState);
+            } else
+            {
+                stateMachine.ChangeState(stateMachine.FallState);
+            }
         }
     }
 
@@ -45,7 +52,7 @@ public class PlayerGroundedState : PlayerBaseState
 
     protected override void OnJumpStarted(InputAction.CallbackContext context)
     {
-        if (isGround())
+        if (isGround() || isMonster())
         {
             Jump();
             stateMachine.ChangeState(stateMachine.JumpState);

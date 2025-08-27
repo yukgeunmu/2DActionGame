@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_GUID: c75cf953a59429744a57417a0a1c792a
+  m_SerializeEntries:
+  - m_GUID: 05cd0d27689e0344ca400e30246c2fdc
+    m_Address: Assets/4.Animations/WKnight/WKnightMain.controller
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - 1002
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b58f44dde8fe224f8917c6331dd2278
+    m_Address: Assets/4.Animations/MainSprite.controller
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - 1000
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17677e6144c45624caed29128d517f90
+    m_Address: Assets/4.Animations/Knight/KnightMain.controller
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - 1001
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 24dac4e262db42542a43d7acbadfe995
+    m_Address: Assets/3.Prefabs/UI/LoginUI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PooledPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 31049f6720365d34c84cae1d7262ea1f
+    m_Address: Assets/3.Prefabs/Grid.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PooledPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f0bae72b2dc16e41bec5899f8ad5ba6
+    m_Address: Assets/3.Prefabs/MushRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - 2001
+    - PooledPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 693df3a984de0104a8aaa652499b02d0
+    m_Address: Assets/3.Prefabs/Player.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Player
+    - PooledPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 93e3dfbe3fcf2024297441af6239ccfa
+    m_Address: Assets/3.Prefabs/UI/GameUI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PooledPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c398de488eface84da87c347ce93b4cb
+    m_Address: Assets/4.Animations/Adventure/AdventureMain.controller
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - 1003
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: efe7217c036ad5843821a7a92b6aea11
+    m_Address: Assets/3.Prefabs/Goblin.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - 2000
+    - PooledPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: e1392d631174c3d46a656bd1496a44b6, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 6c4b0dfa7c0c583408aaa3a28a9815a4, type: 2}
+    - {fileID: 11400000, guid: 188e26aee273ceb4db3bcde8a4ccd393, type: 2}

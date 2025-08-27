@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : Singleton<T>
@@ -20,7 +21,7 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
         }
     }
 
-    protected virtual void Awake()
+    protected virtual async Task Awake()
     {
         if (_instance != null && _instance != this)
         {
