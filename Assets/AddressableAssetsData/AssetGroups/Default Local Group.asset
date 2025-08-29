@@ -78,6 +78,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PooledPrefab
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9661f484e535db44b94987664b26fc65
+    m_Address: Assets/3.Prefabs/Item/Poison.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PooledPrefab
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a24c901d6237521479ab5ef33da2e4dd
     m_Address: Assets/3.Prefabs/Item/Heal.prefab
     m_ReadOnly: 0
@@ -89,6 +95,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - 1003
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cddc296f9ebd9794295aedaacd40a147
+    m_Address: Assets/3.Prefabs/Item/Strong.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PooledPrefab
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d07903dfc3eb4d14f899b942a2088e7c
     m_Address: Assets/3.Prefabs/Skeleton.prefab

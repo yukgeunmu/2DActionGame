@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c5cf597853f53e4eb6f7de6190e59d4, type: 3}
-  m_Name: Sword
+  m_Name: Poison
   m_EditorClassIdentifier: 
   data:
-    id: 0
+    id: 3002
     name: 
     itemType: 
     equipSlot: 

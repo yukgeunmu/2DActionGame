@@ -5,7 +5,7 @@ public class BaseMap : MonoBehaviour, IPoolable
 
     private void OnEnable()
     {
-        InvokeRepeating(nameof(SpawnMonster), 0, 10);
+        InvokeRepeating(nameof(SpawnMonster), 0, 5);
     }
 
     private void OnDisable()

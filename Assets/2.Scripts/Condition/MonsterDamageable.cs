@@ -24,7 +24,7 @@ public class MonsterDamageable : MonoBehaviour, IDamageable
         if (monsterCondition.health <= 0)
         {
             Managers.Game.Count++;
-            Managers.Game.CreateHealItem(this.transform);
+            Managers.Game.CreateItem(this.transform);
             Managers.Game.player.exp += Managers.Game.MonsterExp;
             Managers.UI.gameUI.UpdateCount(Managers.Game.Count);
 

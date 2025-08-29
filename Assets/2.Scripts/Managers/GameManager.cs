@@ -108,13 +108,23 @@ public class GameManager
     }
 
 
-    public void CreateHealItem(Transform transform)
+    public void CreateItem(Transform transform)
     {
         int random = Random.Range(0,100);
 
-        if(random >= 0)
+        if(random >= 0 && random <= 30)
         {
             HealItem item = Managers.Pool.PoolRegistry.Get<HealItem>();
+
+            item.CreatePosition(transform);
+        } else if(random > 30 && random <= 60)
+        {
+            StrongItem item = Managers.Pool.PoolRegistry.Get<StrongItem>();
+
+            item.CreatePosition(transform);
+        } else if(random > 60)
+        {
+            PoisonItem item = Managers.Pool.PoolRegistry.Get<PoisonItem>();
 
             item.CreatePosition(transform);
         }

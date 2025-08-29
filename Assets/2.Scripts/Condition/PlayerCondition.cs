@@ -117,6 +117,11 @@ public class PlayerCondition : MonoBehaviour, IPoolable
         Managers.UI.gameUI.UpdateHpSlider(health / Data.PlayerData.health);
     }
 
+    public void Strong(int amount)
+    {
+        health = Mathf.Min(Data.PlayerData.attack + amount, 20);
+    }
+
     public void SelectSprite(int characterId)
     {
         Debug.Log("캐릭터아이디:" + characterId);
