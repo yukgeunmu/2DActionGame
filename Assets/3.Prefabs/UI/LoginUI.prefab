@@ -128,6 +128,10 @@ MonoBehaviour:
   secondOutLine: {fileID: 5155404374054591660}
   thirdOutLine: {fileID: 6568109006198251873}
   fourthOutLine: {fileID: 4373175374080622631}
+  firstImage: {fileID: 743814529688719443}
+  secondImage: {fileID: 3190164592547362222}
+  thirdImage: {fileID: 44069769413101172}
+  fourthImage: {fileID: 8073042773258143675}
   characterInfoId: 0
   nickName: 
   levelInfoId: 0

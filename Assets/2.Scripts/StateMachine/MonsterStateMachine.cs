@@ -12,6 +12,8 @@ public class MonsterStateMachine : StateMachine
     public MonsterChasingState ChasingState { get; }
     public MonsterAttackState AttackState { get; }
 
+    public MonsterHurtState HurtState { get; }
+
 
     public MonsterStateMachine(MonsterCondition monsterCondition)
     {
@@ -21,8 +23,14 @@ public class MonsterStateMachine : StateMachine
         IdleState = new MonsterIdleState(this);
         ChasingState = new MonsterChasingState(this);
         AttackState = new MonsterAttackState(this);
+        HurtState = new MonsterHurtState(this);
 
         MovementSpeed = MonsterCondition.Data.BaseSpeed + MonsterCondition.Data.MonsterData.speed;
         MovementSpeedModifier = MonsterCondition.Data.MoveSpeedModifier;
+    }
+
+    public IState CurrentState()
+    {
+        return currentState;
     }
 }

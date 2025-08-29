@@ -46,4 +46,60 @@ public class PoolRegistry
             Debug.LogWarning($"Tried to release unregistered object type: {typeof(T)}");
         }
     }
+
+
+
+
+    /*  
+         사용예시
+         List<Monster1> allMonster1s = Managers.Pool.PoolRegistry.GetAll<Monster1>();
+
+        foreach (var m in allMonster1s)
+        {
+            Debug.Log(m.name);
+        }
+    */
+    public List<T> GetAll<T>() where T : Component
+    {
+        if (_typedPools.TryGetValue(typeof(T), out var obj))
+        {
+            return ((Pool<T>)obj).GetAllObjects();
+        }
+        return new List<T>();
+    }
+
+
+
+    // Monster1 활성화된 오브젝트 모두 비활성화
+    //Managers.Pool.PoolRegistry.DeactivateAllActive<Monster1>();
+    public void DeactivateAllActive<T>() where T : Component
+    {
+        if (_typedPools.TryGetValue(typeof(T), out var poolObj))
+        {
+            ((Pool<T>)poolObj).DeactivateAllActive();
+        }
+    }
+
+    // 해당 풀 전부 파괴
+    public void DestroyAll<T>() where T : Component
+    {
+        if (_typedPools.TryGetValue(typeof(T), out var poolObj))
+        {
+            ((Pool<T>)poolObj).DestroyAll();
+        }
+    }
+
+    //개별 선택 파괴
+    public void DestroyObject<T>(T obj) where T : Component
+    {
+        if (_typedPools.TryGetValue(typeof(T), out var poolObj))
+        {
+            ((Pool<T>)poolObj).DestroyObject(obj);
+        }
+        else
+        {
+            Debug.LogWarning($"Tried to release unregistered object type: {typeof(T)}");
+        }
+    }
+
 }

@@ -12,9 +12,8 @@ public class MonsterInfo
     public int defence;
     public int agility;
     public int speed;
-    public int exp;
 
-    public MonsterInfo(int id, string name, int health, int mana, int attack, int defence, int agility, int speed, int exp)
+    public MonsterInfo(int id, string name, int health, int mana, int attack, int defence, int agility, int speed)
     {
         this.id = id;
         this.name = name;
@@ -24,6 +23,5 @@ public class MonsterInfo
         this.defence = defence;
         this.agility = agility;
         this.speed = speed;
-        this.exp = exp;
     }
 }

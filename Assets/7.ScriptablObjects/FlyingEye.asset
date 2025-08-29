@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: FlyingEye
   m_EditorClassIdentifier: 
   <PlayerChasingRange>k__BackingField: 10
-  <BaseSpeed>k__BackingField: 5
+  <BaseSpeed>k__BackingField: 1
   <MoveSpeedModifier>k__BackingField: 1
   <AttackRange>k__BackingField: 1.5
   MonsterData:
-    health: 10
-    mana: 10
-    attack: 1
-    defence: 1
-    agility: 1
-    speed: 1
+    health: 16
+    mana: 6
+    attack: 6
+    defence: 3
+    agility: 3
+    speed: 3
     level: 1
-    exp: 0
+    exp: 35
   monsterNumber: 2002

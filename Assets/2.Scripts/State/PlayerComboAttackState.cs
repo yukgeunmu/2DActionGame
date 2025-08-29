@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerComboAttackState : PlayerAttackState
+public class PlayerComboAttackState : PlayerGroundedState
 {
     public PlayerComboAttackState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
     {
@@ -25,16 +25,24 @@ public class PlayerComboAttackState : PlayerAttackState
 
         AnimatorStateInfo stateInfo = stateMachine.PlayerCondition.Animator.GetCurrentAnimatorStateInfo(0);
 
-        if (stateInfo.normalizedTime >= 1f && stateInfo.IsName("PlayerAttack"))
+        // 공격 애니메이션 종료 전까지 Idle 전환을 막음
+        if (stateInfo.IsName("PlayerAttack"))
         {
-            // isGround()는 PlayerBaseState에 있는 메서드입니다.
-            if (isGround() ||  isMonster())
+            // 연타 입력 처리
+            if (stateMachine.PlayerCondition.Input.playerActions.Attack.WasPressedThisFrame())
             {
-                stateMachine.ChangeState(stateMachine.IdleState);
+                // 다음 공격으로 연결
+                stateMachine.ChangeState(stateMachine.ComboAttackState);
+                return;
             }
-            else
+
+            // 애니메이션 끝났을 때만 상태 전환
+            if (stateInfo.normalizedTime >= 1f)
             {
-                stateMachine.ChangeState(stateMachine.FallState);
+                if (isGround() || isMonster())
+                    stateMachine.ChangeState(stateMachine.IdleState);
+                else
+                    stateMachine.ChangeState(stateMachine.FallState);
             }
         }
     }

@@ -22,6 +22,16 @@ public class Enums {
         lv8 = 5007,
         lv9 = 5008,
         lv10 = 5009,
+        lv11 = 5010,
+        lv12 = 5011,
+        lv13 = 5012,
+        lv14 = 5013,
+        lv15 = 5014,
+        lv16 = 5015,
+        lv17 = 5016,
+        lv18 = 5017,
+        lv19 = 5018,
+        lv20 = 5019,
     }
 
     public enum MonsterNumber

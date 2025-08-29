@@ -62,6 +62,17 @@ public class ResourceManager
                 Debug.LogError($"AnimatorController {key} 로드 실패");
         };
     }
+
+    public void LoadSpriteRenderImage(string key, System.Action<SpriteRenderer> onLoaded)
+    {
+        Addressables.LoadAssetAsync<SpriteRenderer>(key).Completed += (op) =>
+        {
+            if (op.Status == AsyncOperationStatus.Succeeded)
+                onLoaded?.Invoke(op.Result);
+            else
+                Debug.LogError($"AnimatorController {key} 로드 실패");
+        };
+    }
 }
 
     

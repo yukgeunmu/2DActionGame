@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mushroom
   m_EditorClassIdentifier: 
   <PlayerChasingRange>k__BackingField: 10
-  <BaseSpeed>k__BackingField: 5
+  <BaseSpeed>k__BackingField: 1
   <MoveSpeedModifier>k__BackingField: 1
   <AttackRange>k__BackingField: 1.5
   MonsterData:

@@ -10,8 +10,8 @@ public class DataManager
     public List<Item> itemList;
     public List<Stage> stageList;
     public List<LevelInfo> levelInfoList;
-    public List<Monster> monsterList;
-    public List<MonsterOnStage> monsterOnStagesList;
+
+    public List<Player> playerList;
 
 
     public void Init()
@@ -29,13 +29,12 @@ public class DataManager
         itemList = gameAsset.item;
         stageList = gameAsset.stage;
         levelInfoList = gameAsset.levelInfo;
-        monsterList = gameAsset.monster;
-        monsterOnStagesList = gameAsset.monsterOnStage;
     }
 
     public void SetPlayerData(string jsonData)
     {
         Player = JsonUtility.FromJson<Player>(jsonData);
+        Managers.Game.player = Player;
         Debug.Log("Player 넣기 성공");
     }
     

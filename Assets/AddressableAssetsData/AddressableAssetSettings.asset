@@ -108,6 +108,8 @@ MonoBehaviour:
     - 1003
     - 2000
     - 2001
+    - 2003
+    - 2002
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 5475272690519fc448d39f748f6a85d4, type: 2}

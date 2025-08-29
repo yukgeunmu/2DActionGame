@@ -12,6 +12,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin
       objectReference: {fileID: 0}
+    - target: {fileID: 2234732221572600828, guid: 4606378eff750564aa9e4d5c59c19b0d, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6391556
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234732221572600828, guid: 4606378eff750564aa9e4d5c59c19b0d, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1771073
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234732221572600828, guid: 4606378eff750564aa9e4d5c59c19b0d, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.06957781
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234732221572600828, guid: 4606378eff750564aa9e4d5c59c19b0d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.05376482
+      objectReference: {fileID: 0}
     - target: {fileID: 2753135397107586371, guid: 4606378eff750564aa9e4d5c59c19b0d, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -56,14 +72,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6421541321490281321, guid: 4606378eff750564aa9e4d5c59c19b0d, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1439589
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421541321490281321, guid: 4606378eff750564aa9e4d5c59c19b0d, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 0691d9bf94503f44e98c9e9096281b9d, type: 2}
+    - target: {fileID: 6421541321490281321, guid: 4606378eff750564aa9e4d5c59c19b0d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.731451
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8372816562613806248, guid: 4606378eff750564aa9e4d5c59c19b0d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 284919662399572581, guid: 4606378eff750564aa9e4d5c59c19b0d, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 2043318196035635119}
     - targetCorrespondingSourceObject: {fileID: 284919662399572581, guid: 4606378eff750564aa9e4d5c59c19b0d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8675140270620774940}
@@ -73,52 +98,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 284919662399572581, guid: 4606378eff750564aa9e4d5c59c19b0d, type: 3}
   m_PrefabInstance: {fileID: 1200474579923151980}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &2043318196035635119
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395216111400478217}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.70731854}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.2143383}
-  m_EdgeRadius: 0
 --- !u!114 &8675140270620774940
 MonoBehaviour:
   m_ObjectHideFlags: 0

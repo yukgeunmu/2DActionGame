@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -34,6 +35,11 @@ public class LoginUI : BaseUI, IPoolable
     private void Awake()
     {
         Init(Managers.UI);  
+    }
+
+    private void OnEnable()
+    {
+        NickNamePanel.SetActive(false);
     }
 
     public override void Init(UIManager uIManager)
@@ -77,18 +83,16 @@ public class LoginUI : BaseUI, IPoolable
         NickNamePanel.SetActive(true);
     }
 
-    public void OnClickCharacterCreate()
+    public void  OnClickCharacterCreate()
     {
         nickName = nickNameInput.text;
         levelInfoId = (int)Enums.SelectLevel.lv1;
-        Managers.Game.player = new Player(0,characterInfoId, levelInfoId, nickName, 0);
-        Managers.Game.GameStart();
+        Managers.Socket.SendCreatePlayer(characterInfoId, levelInfoId, nickName);
         Debug.Log("캐릭터 생성");
 
-        Managers.Socket.SendCreatePlayer(characterInfoId, levelInfoId, nickName);
-
-        Release();
+        Managers.Game.GameStart(characterInfoId, levelInfoId, nickName);
     }
+
 
     public void OnClickBackBtn()
     {

@@ -11,6 +11,7 @@ public class MonsterChasingState : MonsterBaseState
     {
         base.Enter();
         stateMachine.MovementSpeedModifier = 1;
+        stateMachine.MonsterCondition.Controller.AttackRange.gameObject.SetActive(false);
         StartAnimation(stateMachine.MonsterCondition.AnimationData.GroundParameterHash);
         StartAnimation(stateMachine.MonsterCondition.AnimationData.MoveParameterHash);
     }

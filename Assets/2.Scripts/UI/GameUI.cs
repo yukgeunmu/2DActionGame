@@ -6,8 +6,10 @@ public class GameUI : BaseUI, IPoolable
 {
     public TextMeshProUGUI StageText;
     public TextMeshProUGUI CountText;
+    public TextMeshProUGUI LevelText;
 
     public Image Hp;
+    public Image Exp;
 
 
     private void Awake()
@@ -22,6 +24,12 @@ public class GameUI : BaseUI, IPoolable
         CountText.text = Managers.Game.Count.ToString();
     }
 
+    private void OnEnable()
+    {
+        Hp.fillAmount = 1;
+        Exp.fillAmount = 0;
+        LevelText.text = $"Lv. 1";
+    }
 
     public void UpdateHpSlider(float percentage)
     {
@@ -33,8 +41,18 @@ public class GameUI : BaseUI, IPoolable
         CountText.text = count.ToString();
     }
 
+    public void UpdateLevelText(int level)
+    {
+        LevelText.text = $"Lv. {level}";
+    }
+
+    public void UpdateExp(float exp)
+    {
+       Exp.fillAmount = exp;
+    }
+
     public void Release()
     {
-
+        Managers.Pool.PoolRegistry.Release<GameUI>(this);
     }
 }

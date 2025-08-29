@@ -8,7 +8,6 @@ public class AttackTrigger : MonoBehaviour
     public int damage;
     public LayerMask targetLayer;
 
-    public Type type;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (((1 << collision.gameObject.layer) & targetLayer) != 0)
@@ -21,13 +20,11 @@ public class AttackTrigger : MonoBehaviour
                         ? new Vector2(1f, 0f).normalized
                         : new Vector2(-1f, 0f).normalized;
 
-                StartCoroutine(Knockback(collision.transform, direction, 0.1f, 2f));
+                StartCoroutine(Knockback(target.MainRb().transform, direction, 0.1f, 2f));
 
             }
         }
     }
-
-
 
     IEnumerator Knockback(Transform target, Vector2 dir, float duration, float distance)
     {

@@ -15,7 +15,10 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         input = new InputPlayer();
+
         playerActions = input.PlayerAction;
+
+        Camera.main.GetComponent<CameraMove>().SetTarget(this.transform);
     }
 
     private void OnEnable()

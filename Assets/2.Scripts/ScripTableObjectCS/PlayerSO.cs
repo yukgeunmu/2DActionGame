@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -46,4 +47,6 @@ public class PlayerSO : ScriptableObject
     [field: SerializeField] public PlayerAirData AirData { get; private set; }
 
     [field: SerializeField] public PlayerData PlayerData { get; set; }
+
+    [field: SerializeField] public List<Sprite> characterSprite;
 }

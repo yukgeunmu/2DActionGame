@@ -36,7 +36,11 @@ public class MonsterBaseState : IState
     {
         Move();
         Rotate();
-
+  
+        if(stateMachine.CurrentState() != stateMachine.AttackState)
+        {
+            stateMachine.MonsterCondition.Controller.AttackRange.gameObject.SetActive(false);
+        }
     }
 
     protected void StartAnimation(int animationHash)

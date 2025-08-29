@@ -9,8 +9,6 @@ public class GameAsset
     public List<Item> item;
     public List<Stage> stage;
     public List<LevelInfo> levelInfo;
-    public List<Monster> monster;
-    public List<MonsterOnStage> monsterOnStage;
 
     public GameAsset() { }
 

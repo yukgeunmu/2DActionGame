@@ -4,6 +4,6 @@ public class FlyingEye : MonoBehaviour, IPoolable
 {
     public void Release()
     {
-        throw new System.NotImplementedException();
+        Managers.Pool.PoolRegistry.Release<FlyingEye>(this);
     }
 }

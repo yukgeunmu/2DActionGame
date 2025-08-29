@@ -45,6 +45,19 @@ MonoBehaviour:
     m_SerializedLabels:
     - PooledPrefab
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40de1ff3edec5bd4f9f387b321c0a81f
+    m_Address: Assets/3.Prefabs/UI/GameOverUI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PooledPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e1f545f7a3257f499a755b755355771
+    m_Address: Assets/3.Prefabs/FlyingEye.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - 2002
+    - PooledPrefab
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4f0bae72b2dc16e41bec5899f8ad5ba6
     m_Address: Assets/3.Prefabs/MushRoom.prefab
     m_ReadOnly: 0
@@ -65,11 +78,24 @@ MonoBehaviour:
     m_SerializedLabels:
     - PooledPrefab
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a24c901d6237521479ab5ef33da2e4dd
+    m_Address: Assets/3.Prefabs/Item/Heal.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PooledPrefab
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c398de488eface84da87c347ce93b4cb
     m_Address: Assets/4.Animations/Adventure/AdventureMain.controller
     m_ReadOnly: 0
     m_SerializedLabels:
     - 1003
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d07903dfc3eb4d14f899b942a2088e7c
+    m_Address: Assets/3.Prefabs/Skeleton.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - 2003
+    - PooledPrefab
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: efe7217c036ad5843821a7a92b6aea11
     m_Address: Assets/3.Prefabs/Goblin.prefab

@@ -11,6 +11,7 @@ public class MonsterIdleState : MonsterBaseState
     {
         base.Enter();
         stateMachine.MovementSpeedModifier = 0;
+        stateMachine.MonsterCondition.Controller.AttackRange.gameObject.SetActive(false);
         StartAnimation(stateMachine.MonsterCondition.AnimationData.GroundParameterHash);
         StartAnimation(stateMachine.MonsterCondition.AnimationData.IdleParameterHash);
     }

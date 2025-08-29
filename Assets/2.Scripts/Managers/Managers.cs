@@ -1,8 +1,9 @@
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class Managers : Singleton<Managers>
+public class Managers : MonoBehaviour
 {
+    public static Managers Instance { get; private set; }
     public static readonly GameManager Game = new();
     public static readonly DataManager Data = new();
     public static readonly SocketManager Socket = new();
@@ -11,9 +12,17 @@ public class Managers : Singleton<Managers>
     public static readonly ResourceManager Resource = new();
     public static readonly MapManager Map = new();
 
-    protected override async Task Awake()
+    protected async Task Awake()
     {
-        await base.Awake();
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
 
         Socket.Init();
         Debug.Log("소켓 완료");
@@ -40,6 +49,12 @@ public class Managers : Singleton<Managers>
 
     }
 
+
+    private void OnApplicationQuit()
+    {
+        Socket.OnDestroy();
+        Debug.Log("종료 감지");
+    }
 
 
 

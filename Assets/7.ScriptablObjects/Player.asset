@@ -17,3 +17,19 @@ MonoBehaviour:
     <MoveSpeedModifier>k__BackingField: 1
   <AirData>k__BackingField:
     <JumpForce>k__BackingField: 9
+  <PlayerData>k__BackingField:
+    health: 10
+    mana: 10
+    attack: 3
+    defence: 9
+    agility: 3
+    speed: 5
+    level: 1
+    statPoints: 1
+    maxExp: 10
+    exp: 0
+  characterSprite:
+  - {fileID: 2546757870057634713, guid: f684cc55f23be7c4688bbc603caebd03, type: 3}
+  - {fileID: 815424164945274260, guid: 3e8af64fe7880fe4390073deda27e2a3, type: 3}
+  - {fileID: -3624141828879840293, guid: 57114c0b1f27ea44d8fc6c61a2604b97, type: 3}
+  - {fileID: 3373036982168417826, guid: 2d5e7768a6f1b064889a63e296801021, type: 3}

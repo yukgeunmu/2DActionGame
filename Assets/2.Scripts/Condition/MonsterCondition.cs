@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MonsterCondition : MonoBehaviour, IDamageable
+public class MonsterCondition : MonoBehaviour
 {
     [field: SerializeField] public MonsterSO Data {  get; private set; }
 
@@ -15,11 +15,11 @@ public class MonsterCondition : MonoBehaviour, IDamageable
 
     public GameObject groundCheck;
 
-    private MonsterStateMachine stateMachine;
+    public MonsterStateMachine stateMachine;
 
     public IPoolable poolObject;
 
-    private int health;
+    public int health;
 
     private void Awake()
     {
@@ -30,13 +30,18 @@ public class MonsterCondition : MonoBehaviour, IDamageable
         Controller = GetComponent<MonsterController>();
         poolObject = GetComponentInChildren<IPoolable>();
 
-        SetMonsterData();
+        int p = Random.Range(-5,5);
 
-        health = Data.MonsterData.health;
-
-        this.transform.position = Managers.Map.points[0];
+        this.transform.position = new Vector2(p, 8);
 
         stateMachine = new MonsterStateMachine(this);
+    }
+
+    private void OnEnable()
+    {
+        SetMonsterData();
+        health = Data.MonsterData.health;
+        stateMachine.ChangeState(stateMachine.IdleState);
     }
 
     private void Start()
@@ -55,31 +60,12 @@ public class MonsterCondition : MonoBehaviour, IDamageable
         stateMachine.PhysicsUpdate();
     }
 
-    public void TakeDamage(int damage)
-    {
-        int resultDamage = Mathf.Max(damage - Data.MonsterData.defence, 1);
-        health = Mathf.Max(health - resultDamage, 0);
-
-
-        if (health <= 0)
-        {
-            Managers.Game.Count++;
-
-            Managers.UI.gameUI.UpdateCount(Managers.Game.Count);
-
-            poolObject.Release();
-
-            health = Data.MonsterData.health;
-
-            int p = Random.Range(0, 12);
-
-            this.transform.position = Managers.Map.points[p];
-        }
-    }
 
     public void SetMonsterData()
     {
         MonsterInfo monsterInfo = null ;
+        Data.MonsterData.level = Managers.Game.MonsterLevel;
+        Data.MonsterData.exp += Managers.Game.MonsterExp;
 
         for(int i = 0; i < Managers.Data.monsterInfoList.Count; i++)
         {
@@ -93,13 +79,12 @@ public class MonsterCondition : MonoBehaviour, IDamageable
         // monsterInfo가 null이 아닌지 확인
         if (monsterInfo != null)
         {
-            Data.MonsterData.health = monsterInfo.health;
-            Data.MonsterData.mana = monsterInfo.mana;
-            Data.MonsterData.attack = monsterInfo.attack;
-            Data.MonsterData.defence = monsterInfo.defence;
-            Data.MonsterData.agility = monsterInfo.agility;
-            Data.MonsterData.speed = monsterInfo.speed;
-            Data.MonsterData.exp = monsterInfo.exp;
+            Data.MonsterData.health = monsterInfo.health + Data.MonsterData.level;
+            Data.MonsterData.mana = monsterInfo.mana + Data.MonsterData.level;
+            Data.MonsterData.attack = monsterInfo.attack + Data.MonsterData.level;
+            Data.MonsterData.defence = monsterInfo.defence + Data.MonsterData.level;
+            Data.MonsterData.agility = monsterInfo.agility + Data.MonsterData.level;
+            Data.MonsterData.speed = monsterInfo.speed + Data.MonsterData.level;
         }
         else
         {

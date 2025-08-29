@@ -11,6 +11,7 @@ public class MonsterAnimationData
 
     [SerializeField] private string attackParameterName = "@Attack";
     [SerializeField] private string NormalAttackParameterName = "NormalAttack";
+    [SerializeField] private string HurtParameterName = "Hurt";
 
     public int GroundParameterHash { get; private set; }
     public int IdleParameterHash { get; private set; }
@@ -19,6 +20,8 @@ public class MonsterAnimationData
 
     public int AttackParameterHash { get; private set; }
     public int NormalAttackParameterHash { get; private set; }
+
+    public int HurtParameterHash { get; private set; }
 
     public void Initialize()
     {
@@ -30,5 +33,6 @@ public class MonsterAnimationData
 
         AttackParameterHash = Animator.StringToHash(attackParameterName);
         NormalAttackParameterHash = Animator.StringToHash(NormalAttackParameterName);
+        HurtParameterHash = Animator.StringToHash(HurtParameterName);
     }
 }
